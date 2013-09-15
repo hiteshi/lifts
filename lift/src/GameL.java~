@@ -1,0 +1,44 @@
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.GridLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+public class DrawingComponent extends JLabel {
+
+public static int x = 0;
+
+public void paintComponent(Graphics g){
+    Graphics2D g2 = (Graphics2D) g;
+    Rectangle rect = new Rectangle(50,x,50,50);
+    g2.draw(rect);
+    x = x+100;
+}
+}
+
+public class GameL {
+
+javax.swing.JFrame frame = new javax.swing.JFrame();
+
+public static void main(String[] args) {
+        GameL tetris = new GameL();
+        tetris.start();     
+}
+
+public void start(){
+    //setup frame
+    frame.setSize(800,600);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame.setVisible(true);
+TimerEH timereh = new TimerEH();
+    Timer timer = new Timer(5000,timereh);
+    timer.start();          
+}
+
+class TimerEH implements ActionListener{        
+    public void actionPerformed(ActionEvent e){
+        DrawingComponent dc = new DrawingComponent();
+        frame.add(dc);
+    }       
+}
+}
