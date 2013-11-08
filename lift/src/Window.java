@@ -9,7 +9,9 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 class Window {
+
 	JFrame jfrm;
+	Building building;
 	public Window() 
 	{
 		showWindow();
@@ -39,5 +41,8 @@ class Window {
 		button2.setFont(font2);
 		jfrm.getContentPane().add(BorderLayout.CENTER,button);
 		jfrm.getContentPane().add(BorderLayout.SOUTH,button2);
+	//building = new Building();
 	}
+	
 }
+
